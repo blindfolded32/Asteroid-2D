@@ -7,15 +7,23 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Code" t="Include">
+          <e p="CommonClasses" t="Include">
+            <e p="InputManager.cs" t="Include" />
+          </e>
           <e p="GameStarter.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="Interfaces" t="Include">
+              <e p="IPlayerController.cs" t="Include" />
+              <e p="IPlayerModel.cs" t="Include" />
               <e p="IPlayerMovement.cs" t="Include" />
+              <e p="IPlayerView.cs" t="Include" />
             </e>
             <e p="PlayerCode" t="Include">
               <e p="PlayerAcceleration.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
+              <e p="PlayerModel.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
+              <e p="PlayerView.cs" t="Include" />
             </e>
           </e>
           <e p="Ship" t="Include">
