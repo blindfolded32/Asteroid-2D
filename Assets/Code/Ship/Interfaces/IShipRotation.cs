@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Player.Interfaces
+namespace Code.Ship.Interfaces
 {
     public interface IShipRotation
     {

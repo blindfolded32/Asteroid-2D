@@ -22,10 +22,11 @@
       <Path>ProjectSettings</Path>
     </explicitIncludes>
     <explicitExcludes>
+      <Path>.git</Path>
       <Path>.idea</Path>
-      <Path>Asteroid_2D</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>SbSTanks</Path>
       <Path>Temp</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>

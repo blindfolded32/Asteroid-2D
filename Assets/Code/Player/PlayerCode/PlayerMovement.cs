@@ -5,22 +5,22 @@ namespace Code.Player.PlayerCode
     public class PlayerMovement : IPlayerMovement
     {
         
-        private readonly Transform _transform;
-        private Vector3 _move;
+        private readonly Rigidbody2D _rigidbody2D;
+        private Vector2 _move;
 
         public float Speed { get; protected set; }
-        
-        public PlayerMovement(Transform transform, float speed)
+
+        protected PlayerMovement(Rigidbody2D rigidbody2D, float speed)
         {
-            _transform = transform;
+            _rigidbody2D = rigidbody2D;
             Speed = speed;
         }
 
         public void Move(float horizontal, float vertical,  float deltaTime)
         {
             var speed = deltaTime * Speed;
-            _move.Set(horizontal * speed, vertical * speed, 0.0f);
-            _transform.localPosition += _move;
+            _move = new Vector2(horizontal,vertical);
+         _rigidbody2D.AddForce(_move * speed,ForceMode2D.Impulse);
         }
 
     }

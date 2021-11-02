@@ -26,7 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Asteroid_2D" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -34,12 +34,22 @@
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerAcceleration.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IShipRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Ship/ShipCode/ShipController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Ship/ShipCode/ShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Ship/ShipCode/PlayerShip.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerAcceleration.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameStarter.cs" />
       </list>
     </option>
   </component>
@@ -53,6 +63,13 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -83,7 +100,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635747887141</updated>
-      <workItem from="1635747913360" duration="1069000" />
+      <workItem from="1635747913360" duration="4115000" />
+      <workItem from="1635781678057" duration="5724000" />
+      <workItem from="1635841216373" duration="10497000" />
     </task>
     <servers />
   </component>
@@ -102,8 +121,22 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Asteroid_2D" />
+    </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1108" y="210" key="RiderGenerateDialog" timestamp="1635751376231">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state x="1108" y="210" key="RiderGenerateDialog/0.0.2560.1050@0.0.2560.1050" timestamp="1635751376231" />
+    <state x="781" y="169" key="SettingsEditor" timestamp="1635842004464">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state x="781" y="169" key="SettingsEditor/0.0.2560.1050@0.0.2560.1050" timestamp="1635842004464" />
   </component>
 </project>
