@@ -20,7 +20,7 @@ namespace Code.Player.PlayerCode
         {
             var speed = deltaTime * Speed;
             _move = new Vector2(horizontal,vertical);
-         _rigidbody2D.AddForce(_move * speed,ForceMode2D.Impulse);
+            _rigidbody2D.AddForce(_move * speed,ForceMode2D.Impulse);
         }
 
     }

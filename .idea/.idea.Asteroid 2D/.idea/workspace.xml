@@ -38,18 +38,18 @@
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Ship/ShipCode/ShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Ship/ShipCode/ShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Ship/ShipCode/PlayerShip.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerAcceleration.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameStarter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerMovement.cs" />
       </list>
     </option>
   </component>
@@ -102,7 +102,7 @@
       <updated>1635747887141</updated>
       <workItem from="1635747913360" duration="4115000" />
       <workItem from="1635781678057" duration="5724000" />
-      <workItem from="1635841216373" duration="10497000" />
+      <workItem from="1635841216373" duration="12519000" />
     </task>
     <servers />
   </component>
