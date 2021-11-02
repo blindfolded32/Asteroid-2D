@@ -21,7 +21,6 @@ namespace Code
         {
             _camera = Camera.main;
             _playerController = new PlayerController(new PlayerModel(_speed,_acceleration,_hp), FindObjectOfType<PlayerView>());
-         //   _inputManager = new InputManager(_playerController,_camera);
         }
 
         private void Update()

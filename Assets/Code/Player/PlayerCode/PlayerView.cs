@@ -8,7 +8,7 @@ namespace Code.Player.PlayerCode
     public class PlayerView : MonoBehaviour,IPlayerView
     {
         public Transform Transform { get; set; }
-        public Rigidbody2D Rigidbody2D { get => _rigidbody2D ; private set => _rigidbody2D = value; }
+        public Rigidbody2D Rigidbody2D { get => _rigidbody2D ; set => _rigidbody2D = value; }
         private Rigidbody2D _rigidbody2D;
 
         private void Awake()
