@@ -7,27 +7,24 @@ namespace Code.CommonClasses
     public class InputManager
     {
         private readonly IPlayerController _playerController;
-        private Camera _camera;
+       
         
-        public InputManager(IPlayerController playerController,Camera camera)
+        public InputManager(IPlayerController playerController)
         {
             _playerController = playerController;
-            _camera = camera;
         }
 
-        public void OnKeyPressed(KeyCode key)
+        public void OnKeyPressed(Event _event)
         {
-            var direction = Input.mousePosition - _camera.WorldToScreenPoint(_playerController.GetTransform().position);
-            _playerController.RotateShip(direction);
             
-            if (key == KeyCode.LeftShift)
+            
+            if (_event.keyCode == KeyCode.LeftShift)
             {
                 _playerController.Ship.AddAcceleration();
             }
-            
-            if (Input.GetKeyUp(KeyCode.LeftShift))
+            if (_event.keyCode == KeyCode.W)
             {
-                _playerController.Ship.RemoveAcceleration();
+                _playerController.Ship.Move(Input.GetAxis("Horizontal"), 0, Time.deltaTime);
             }
         }
     }

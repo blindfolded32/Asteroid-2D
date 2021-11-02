@@ -1,5 +1,8 @@
-﻿namespace Code.Player.Interfaces
+﻿using System;
+
+namespace Code.Player.Interfaces
 {
+
     public interface IPlayerModel
     {
         float Speed { get; set; }

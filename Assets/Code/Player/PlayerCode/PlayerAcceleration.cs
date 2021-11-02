@@ -6,9 +6,9 @@ namespace Code.Player.PlayerCode
 {
     internal sealed class PlayerAcceleration : PlayerMovement
     {
-        private readonly float _acceleration;
+        private float _acceleration;
 
-        public PlayerAcceleration(Transform transform, float speed, float acceleration) : base(transform, speed)
+        public PlayerAcceleration(Rigidbody2D rigidbody2D, float speed, float acceleration) : base(rigidbody2D, speed)
         {
             _acceleration = acceleration;
         }

@@ -1,7 +1,9 @@
 ﻿using Code.Player.Interfaces;
+using Code.Player.PlayerCode;
+using Code.Ship.Interfaces;
 using UnityEngine;
 
-namespace Code.Player.PlayerCode
+namespace Code.Ship.ShipCode
 {
     public class ShipController : IPlayerMovement, IShipRotation
     {

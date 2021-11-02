@@ -1,7 +1,7 @@
-﻿using Code.Player.Interfaces;
+﻿using Code.Ship.Interfaces;
 using UnityEngine;
 
-namespace Code.Player.PlayerCode
+namespace Code.Ship.ShipCode
 {
     public class PlayerShip : IShipRotation
     {

@@ -1,3 +1,4 @@
+using System;
 using Code.CommonClasses;
 using Code.Player.Interfaces;
 using Code.Player.PlayerCode;
@@ -10,28 +11,27 @@ namespace Code
     {
         private Camera _camera;
         private IPlayerController _playerController;
-        private Event _event;
+        [SerializeField] private float _speed;
+        [SerializeField] private float _acceleration;
+        [SerializeField] private float _hp;
+        
 
-        private InputManager _inputManager;
-        // Start is called before the first frame update
-        void Start()
+      //  private InputManager _inputManager;
+      void Start()
         {
             _camera = Camera.main;
-            _playerController = new PlayerController(new PlayerModel(), FindObjectOfType<PlayerView>());
-            _inputManager = new InputManager(_playerController,_camera);
+            _playerController = new PlayerController(new PlayerModel(_speed,_acceleration,_hp), FindObjectOfType<PlayerView>());
+         //   _inputManager = new InputManager(_playerController,_camera);
         }
 
-        // Update is called once per frame
-        void OnGUI()
+        private void Update()
         {
-            _event = Event.current;
-         //   Debug.Log($"now is {_event}");
-            if (_event.isKey)
-            {
-                _inputManager.OnKeyPressed(_event.keyCode);
-            }
-            
-        
+            var direction = Input.mousePosition - _camera.WorldToScreenPoint(_playerController.GetTransform().position);
+            _playerController.RotateShip(direction);
+            _playerController.Ship.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Time.fixedDeltaTime);
+            if (Input.GetKeyDown(KeyCode.LeftShift)) _playerController.Ship.AddAcceleration();
+            if (Input.GetKeyUp(KeyCode.LeftShift)) _playerController.Ship.RemoveAcceleration();
         }
     }
 }
+

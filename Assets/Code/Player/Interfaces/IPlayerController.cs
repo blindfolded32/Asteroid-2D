@@ -1,4 +1,5 @@
 ﻿using Code.Player.PlayerCode;
+using Code.Ship.ShipCode;
 using UnityEngine;
 
 namespace Code.Player.Interfaces
