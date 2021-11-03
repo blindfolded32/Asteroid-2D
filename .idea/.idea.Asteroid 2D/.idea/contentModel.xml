@@ -7,13 +7,39 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Code" t="Include">
+          <e p="Asteroid" t="Include">
+            <e p="AsteroidCode" t="Include">
+              <e p="AbstractAsteroid.cs" t="Include" />
+              <e p="AsteroidFactory.cs" t="Include" />
+            </e>
+            <e p="AsteroidPool.cs" t="Include" />
+            <e p="Interfaces" t="Include">
+              <e p="IAsteroidFactory.cs" t="Include" />
+            </e>
+          </e>
           <e p="Bullet" t="Include">
-            <e p="BulletView.cs" t="Include" />
+            <e p="BulletCode" t="Include">
+              <e p="Bullet.cs" t="Include" />
+            </e>
+            <e p="BulletPool.cs" t="Include" />
+            <e p="Interfaces" t="Include">
+              <e p="IBulletFactory.cs" t="Include" />
+            </e>
           </e>
           <e p="CommonClasses" t="Include">
+            <e p="Health.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
+            <e p="NameManager.cs" t="Include" />
+          </e>
+          <e p="CommonInterfaces" t="Include">
+            <e p="IFire.cs" t="Include" />
+            <e p="ITakeDamage.cs" t="Include" />
           </e>
           <e p="GameStarter.cs" t="Include" />
+          <e p="Markers" t="Include">
+            <e p="DestroybleObject.cs" t="Include" />
+            <e p="FirePoint.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="Interfaces" t="Include">
               <e p="IPlayerController.cs" t="Include" />
@@ -26,6 +52,7 @@
               <e p="PlayerController.cs" t="Include" />
               <e p="PlayerModel.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
+              <e p="PlayerShoot.cs" t="Include" />
               <e p="PlayerView.cs" t="Include" />
             </e>
           </e>
