@@ -1,6 +1,4 @@
-﻿using System;
-using Code.Player.Interfaces;
-using UnityEngine;
+﻿using Code.Player.Interfaces;
 
 namespace Code.Player.PlayerCode
 {

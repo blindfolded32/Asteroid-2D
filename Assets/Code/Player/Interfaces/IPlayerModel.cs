@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Code.Player.Interfaces
+﻿namespace Code.Player.Interfaces
 {
 
     public interface IPlayerModel

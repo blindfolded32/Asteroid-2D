@@ -1,11 +1,8 @@
-﻿using System;
-using Code.Bullet.Interfaces;
+﻿using Code.Bullet.Interfaces;
 using Code.CommonClasses;
 using Code.CommonInterfaces;
 using Code.Markers;
-using Code.Player.PlayerCode;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 namespace Code.Bullet
 {

@@ -1,5 +1,4 @@
-﻿using Code.Bullet;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Code.CommonInterfaces
 {

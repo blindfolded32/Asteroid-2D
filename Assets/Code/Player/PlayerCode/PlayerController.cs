@@ -1,7 +1,4 @@
-﻿using Code.Asteroid;
-using Code.Bullet;
-using Code.CommonInterfaces;
-using Code.Player.Interfaces;
+﻿using Code.Player.Interfaces;
 using Code.Ship.ShipCode;
 using UnityEngine;
 

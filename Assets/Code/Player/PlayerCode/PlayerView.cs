@@ -1,5 +1,4 @@
-﻿using System;
-using Code.CommonInterfaces;
+﻿using Code.CommonInterfaces;
 using Code.Player.Interfaces;
 using UnityEngine;
 

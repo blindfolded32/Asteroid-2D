@@ -1,14 +1,21 @@
-﻿using Code.Asteroid.Interfaces;
+﻿using System;
+using Code.Asteroid.Interfaces;
 using Code.CommonClasses;
+using Code.CommonInterfaces;
+using Code.Markers;
 using UnityEngine;
 
 namespace Code.Asteroid
 {
+    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(DestroybleObject))]
     public class AbstractAsteroid : MonoBehaviour
     {
+        [SerializeField] private float _damage = 1.0f;
         public static IAsteroidFactory Factory;
         private Transform _rotPool;
         private Health _health;
+        public Rigidbody2D Rigidbody2D;
         public Health Health
         {
             get
@@ -34,6 +41,30 @@ namespace Code.Asteroid
                 return _rotPool;
             }
         }
+        private void Start()
+        {
+            Rigidbody2D = GetComponent<Rigidbody2D>();
+        }
+
+        private void Update()
+        {
+            if (transform.position.y < -10.0f)
+            {
+                Debug.Log("Back to pool");
+                ReturnToPool();
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.TryGetComponent<DestroybleObject>(out var destroybleObject))
+            {
+                other.gameObject.GetComponent<ITakeDamage>().TakeDamage(_damage);
+                ReturnToPool();
+            }
+            ReturnToPool();
+        }
+
         public static AbstractAsteroid CreateAsteroidEnemy(Health hp)
         {
             var enemy = Instantiate(Resources.Load<AbstractAsteroid>("Prefabs/Asteroid"));
@@ -62,7 +93,6 @@ namespace Code.Asteroid
                 Destroy(gameObject);
             }
         }
-
 
     }
 }

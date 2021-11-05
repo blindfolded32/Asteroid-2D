@@ -13,6 +13,7 @@
               <e p="AsteroidFactory.cs" t="Include" />
             </e>
             <e p="AsteroidPool.cs" t="Include" />
+            <e p="AsteroidSpawner.cs" t="Include" />
             <e p="Interfaces" t="Include">
               <e p="IAsteroidFactory.cs" t="Include" />
             </e>
@@ -34,6 +35,22 @@
           <e p="CommonInterfaces" t="Include">
             <e p="IFire.cs" t="Include" />
             <e p="ITakeDamage.cs" t="Include" />
+          </e>
+          <e p="EnemyShip" t="Include">
+            <e p="Code" t="Include">
+              <e p="EnemyShip.cs" t="Include" />
+              <e p="EnemyShipController.cs" t="Include" />
+              <e p="EnemyShipFabric.cs" t="Include" />
+              <e p="EnemyShipModel.cs" t="Include" />
+              <e p="EnemyShipShoot.cs" t="Include" />
+              <e p="EnemyShipView.cs" t="Include" />
+            </e>
+            <e p="Interfaces" t="Include">
+              <e p="IEnemyController.cs" t="Include" />
+              <e p="IEnemyShipFabric.cs" t="Include" />
+              <e p="IEnemyShipModel.cs" t="Include" />
+              <e p="IEnemyShipView.cs" t="Include" />
+            </e>
           </e>
           <e p="GameStarter.cs" t="Include" />
           <e p="Markers" t="Include">
