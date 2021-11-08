@@ -66,7 +66,6 @@
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyShipModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyShipFabric.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyShipView.cs" />
@@ -85,6 +84,7 @@
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidCode/AbstractAsteroid.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipShoot.cs" />
       </list>
     </option>
   </component>
@@ -149,6 +149,7 @@
       <workItem from="1636216208440" duration="921000" />
       <workItem from="1636269394637" duration="4399000" />
       <workItem from="1636302136811" duration="4918000" />
+      <workItem from="1636386136646" duration="289000" />
     </task>
     <servers />
   </component>

@@ -18,8 +18,7 @@ namespace Code.Bullet
         public Rigidbody2D Rigidbody2D;
         private Transform _bulletPool;
         public Transform Transform;
-        private float _lifeTime =0.5f;
-       
+      
         private void Awake()
         {
             Rigidbody2D = GetComponent<Rigidbody2D>();

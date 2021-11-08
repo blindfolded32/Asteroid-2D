@@ -36,6 +36,7 @@
             <e p="IFire.cs" t="Include" />
             <e p="ITakeDamage.cs" t="Include" />
           </e>
+          <e p="ConfigVars.cs" t="Include" />
           <e p="EnemyShip" t="Include">
             <e p="Code" t="Include">
               <e p="EnemyShip.cs" t="Include" />
@@ -57,6 +58,7 @@
           <e p="Markers" t="Include">
             <e p="DestroybleObject.cs" t="Include" />
             <e p="FirePoint.cs" t="Include" />
+            <e p="PlayerSpawn.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="Interfaces" t="Include">
@@ -65,6 +67,7 @@
               <e p="IPlayerMovement.cs" t="Include" />
               <e p="IPlayerView.cs" t="Include" />
             </e>
+            <e p="PlayerClass.cs" t="Include" />
             <e p="PlayerCode" t="Include">
               <e p="PlayerAcceleration.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />

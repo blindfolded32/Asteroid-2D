@@ -10,25 +10,26 @@ namespace Code.EnemyShip.Code
     {
 
         private readonly BulletPool _bulletPool;
-        private bool _fired = true;
+        private readonly float _fireRate = 0.5f;
+        private float _nextShot;
 
         public EnemyShipShoot(int capacity)
         {
             _bulletPool = new BulletPool(capacity);
         }
-
-        private bool Fired() => !_fired;
             
         public void Shoot(Transform spawnPosition)
         {
-            if (Fired())
+            if (Time.time > _fireRate + _nextShot)
             {
+                _nextShot = Time.time + _fireRate;
+                
                 var bullet = _bulletPool.GetItem("Bullet");
                 Physics2D.IgnoreCollision(spawnPosition.parent.GetComponent<Collider2D>(), bullet.GetComponent<Collider2D>());
                 bullet.Transform.position = spawnPosition.position;
                 bullet.Transform.rotation = spawnPosition.rotation;
                 bullet.gameObject.SetActive(true);
-                bullet.Rigidbody2D.AddForce(bullet.Transform.position * 10, ForceMode2D.Impulse);
+                bullet.Rigidbody2D.AddForce(bullet.Transform.position.normalized * 10, ForceMode2D.Impulse);
             }
         }
     }
