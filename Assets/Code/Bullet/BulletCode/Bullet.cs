@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Code.Bullet
 {
+    [RequireComponent(typeof(Collider))]
     public class Bullet : MonoBehaviour
     {
         [SerializeField]private float _damage;
@@ -14,10 +15,12 @@ namespace Code.Bullet
         public Sprite sprite;
         public Rigidbody2D Rigidbody2D;
         private Transform _bulletPool;
+        public Transform Transform;
 
         private void Awake()
         {
             Rigidbody2D = GetComponent<Rigidbody2D>();
+            Transform = transform;
         }
 
         private Transform BulletPool

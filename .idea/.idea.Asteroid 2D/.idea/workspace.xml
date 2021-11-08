@@ -34,12 +34,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Code/Player/Ship/ShipCode/ShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Ship/ShipCode/ShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Ship/ShipCode/PlayerShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerAcceleration.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/CommonInterfaces/ITakeDamage.cs" />
@@ -47,7 +45,6 @@
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerFire.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Markers/FirePoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AbstractAsteroid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/Interfaces/IAasteroidFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/Interfaces/IAsteroidFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidFactory.cs" />
@@ -62,14 +59,10 @@
         <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletCode/BulletModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Bullet/Interfaces/IBulletFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletCode/BulletFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/NameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/CommonInterfaces/IFire.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletCode/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyShipModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipModel.cs" />
@@ -77,14 +70,21 @@
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyShipFabric.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyShipView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShip.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipFabric.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipFabric.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/NameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/EhemyShipPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/GameStarter.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/Health.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameStarter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletCode/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidCode/AbstractAsteroid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipView.cs" />
       </list>
     </option>
   </component>
@@ -144,7 +144,11 @@
       <workItem from="1635921378624" duration="17387000" />
       <workItem from="1636019515201" duration="2658000" />
       <workItem from="1636040987938" duration="4560000" />
-      <workItem from="1636094798962" duration="8679000" />
+      <workItem from="1636094798962" duration="9266000" />
+      <workItem from="1636187822535" duration="1386000" />
+      <workItem from="1636216208440" duration="921000" />
+      <workItem from="1636269394637" duration="4399000" />
+      <workItem from="1636302136811" duration="4918000" />
     </task>
     <servers />
   </component>
@@ -244,9 +248,9 @@
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
     <state x="781" y="169" key="SettingsEditor/0.0.2560.1050@0.0.2560.1050" timestamp="1635842004464" />
-    <state x="936" y="243" key="run.anything.popup" timestamp="1636020177559">
+    <state x="936" y="243" key="run.anything.popup" timestamp="1636216342368">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="936" y="243" key="run.anything.popup/0.0.2560.1050@0.0.2560.1050" timestamp="1636020177559" />
+    <state x="936" y="243" key="run.anything.popup/0.0.2560.1050@0.0.2560.1050" timestamp="1636216342368" />
   </component>
 </project>

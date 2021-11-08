@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Code.Player.PlayerCode
 {
     [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Collider))]
     public class PlayerView : MonoBehaviour,IPlayerView, ITakeDamage
     {
         public Transform Transform { get; set; }
@@ -14,12 +15,13 @@ namespace Code.Player.PlayerCode
         private void Awake()
         {
             Transform = transform;
-            TryGetComponent(out _rigidbody2D);
+            _rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
         public void TakeDamage(float damage)
         {
-            Debug.Log("Hurts");
+            
+            Debug.Log($"Hurts ");
         }
     }
 }

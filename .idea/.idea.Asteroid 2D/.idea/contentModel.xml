@@ -45,6 +45,7 @@
               <e p="EnemyShipShoot.cs" t="Include" />
               <e p="EnemyShipView.cs" t="Include" />
             </e>
+            <e p="EhemyShipPool.cs" t="Include" />
             <e p="Interfaces" t="Include">
               <e p="IEnemyController.cs" t="Include" />
               <e p="IEnemyShipFabric.cs" t="Include" />

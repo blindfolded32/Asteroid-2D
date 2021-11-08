@@ -12,11 +12,13 @@ namespace Code.Asteroid
         private readonly Dictionary<string, HashSet<AbstractAsteroid>> _enemyPool;
         private readonly int _capacityPool;
         private readonly Transform _rootPool;
+        private Health _hp;
 
-        public AsteroidPool(int capacityPool)
+        public AsteroidPool(int capacityPool, Health health)
         {
             _enemyPool = new Dictionary<string, HashSet<AbstractAsteroid>>();
             _capacityPool = capacityPool;
+            _hp = health;
             if (!_rootPool)
             {
                 _rootPool = new GameObject(NameManager.POOL_AMMUNITION).transform;
@@ -51,13 +53,17 @@ namespace Code.Asteroid
                 for (var i = 0; i < _capacityPool; i++)
                 {
                     var instantiate = Object.Instantiate(laser);
+                    instantiate.DependencyInjectHealth(_hp);
                     ReturnToPool(instantiate.transform);
                     enemies.Add(instantiate);
                 }
 
                 GetAsteroid(enemies);
             }
-            enemy = enemies.FirstOrDefault(a => !a.gameObject.activeSelf);
+            enemy = enemies.FirstOrDefault(a =>
+            {
+                return !a.gameObject.activeSelf;
+            });
             return enemy;
         }
 

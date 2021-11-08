@@ -9,7 +9,7 @@ namespace Code.Asteroid
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(DestroybleObject))]
-    public class AbstractAsteroid : MonoBehaviour
+    public class AbstractAsteroid : MonoBehaviour, ITakeDamage
     {
         [SerializeField] private float _damage = 1.0f;
         public static IAsteroidFactory Factory;
@@ -26,8 +26,12 @@ namespace Code.Asteroid
                 }
                 return _health;
             }
-            protected set => _health = value;
+            protected set
+            {
+                _health = value;
+            }
         }
+
         public Transform RotPool
         {
             get
@@ -40,6 +44,11 @@ namespace Code.Asteroid
 
                 return _rotPool;
             }
+        }
+
+        public AbstractAsteroid(Health health)
+        {
+            _health = health;
         }
         private void Start()
         {
@@ -55,8 +64,14 @@ namespace Code.Asteroid
             }
         }
 
+        private void OnCollisionEnter(Collision other)
+        {
+            Debug.Log(other.GetType());
+        }
+
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log($"triggered by {other.GetType()}");
             if (other.gameObject.TryGetComponent<DestroybleObject>(out var destroybleObject))
             {
                 other.gameObject.GetComponent<ITakeDamage>().TakeDamage(_damage);
@@ -94,5 +109,11 @@ namespace Code.Asteroid
             }
         }
 
+        public void TakeDamage(float damage)
+        {
+            Debug.Log($"My HP is {_health.Current}");
+            this.DependencyInjectHealth(new Health(_health.Max,_health.Current - damage));
+            if (Health.Current > 0.0f) ReturnToPool();
+        }
     }
 }

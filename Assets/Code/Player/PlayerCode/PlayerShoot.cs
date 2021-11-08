@@ -17,10 +17,11 @@ namespace Code.Player.PlayerCode
         public void Shoot(Transform spawnPosition)
         {
           var _bullet = _bulletPool.GetItem("Bullet");
-           _bullet.transform.position = spawnPosition.position;
-           _bullet.transform.rotation = spawnPosition.rotation;
+          Physics2D.IgnoreCollision(spawnPosition.parent.GetComponent<Collider2D>(),_bullet.GetComponent<Collider2D>());
+           _bullet.Transform.position = spawnPosition.position;
+           _bullet.Transform.rotation = spawnPosition.rotation;
            _bullet.gameObject.SetActive(true);           
-           _bullet.Rigidbody2D.AddForce(spawnPosition.position ,ForceMode2D.Impulse);
+           _bullet.Rigidbody2D.AddForce(_bullet.Transform.position * 10 ,ForceMode2D.Impulse);
           
         }
     }

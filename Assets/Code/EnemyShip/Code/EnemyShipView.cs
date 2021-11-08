@@ -23,8 +23,16 @@ namespace Code.EnemyShip.Code
 
      private void FixedUpdate()
      {
-         _transform.position = Vector2.MoveTowards(this._transform.position,FindObjectOfType<PlayerView>().gameObject.transform.position,Time.fixedDeltaTime);
-         //  _navMeshAgent.destination = FindObjectOfType<PlayerView>().Transform.position;
+         var PlayerPosition = FindObjectOfType<PlayerView>().gameObject.transform.position;
+         if (Vector2.Distance(PlayerPosition, _transform.position) > 5.0f)
+         {
+             _transform.position = Vector2.MoveTowards(this._transform.position,PlayerPosition,Time.fixedDeltaTime);
+         }
+         else
+         {
+             _transform.RotateAround(PlayerPosition,Vector2.up, 20.0f*Time.fixedDeltaTime);
+            // _transform.position = _transform.rotation.eulerAngles;
+         }
      }
     }
 }
