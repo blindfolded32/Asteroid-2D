@@ -10,9 +10,9 @@ namespace Code.Player.PlayerCode
        // private Bullet.Bullet _bullet;
         private BulletPool _bulletPool;
 
-        public PlayerShoot()
+        public PlayerShoot(int capacity)
         {
-           _bulletPool = new BulletPool(3);
+           _bulletPool = new BulletPool(capacity);
         }
         public void Shoot(Transform spawnPosition)
         {

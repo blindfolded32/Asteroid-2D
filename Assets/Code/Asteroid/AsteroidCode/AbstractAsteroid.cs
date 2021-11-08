@@ -64,14 +64,8 @@ namespace Code.Asteroid
             }
         }
 
-        private void OnCollisionEnter(Collision other)
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            Debug.Log(other.GetType());
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            Debug.Log($"triggered by {other.GetType()}");
             if (other.gameObject.TryGetComponent<DestroybleObject>(out var destroybleObject))
             {
                 other.gameObject.GetComponent<ITakeDamage>().TakeDamage(_damage);
@@ -79,7 +73,6 @@ namespace Code.Asteroid
             }
             ReturnToPool();
         }
-
         public static AbstractAsteroid CreateAsteroidEnemy(Health hp)
         {
             var enemy = Instantiate(Resources.Load<AbstractAsteroid>("Prefabs/Asteroid"));

@@ -1,4 +1,6 @@
-﻿using Code.Bullet.Interfaces;
+﻿using System;
+using System.Collections;
+using Code.Bullet.Interfaces;
 using Code.CommonClasses;
 using Code.CommonInterfaces;
 using Code.Markers;
@@ -16,13 +18,13 @@ namespace Code.Bullet
         public Rigidbody2D Rigidbody2D;
         private Transform _bulletPool;
         public Transform Transform;
-
+        private float _lifeTime = 2.0f;
         private void Awake()
         {
             Rigidbody2D = GetComponent<Rigidbody2D>();
             Transform = transform;
+            StartCoroutine(DestroyCorutine(_lifeTime));
         }
-
         private Transform BulletPool
         {
             get
@@ -35,18 +37,20 @@ namespace Code.Bullet
                 return _bulletPool;
             }
         }
-        private void OnTriggerEnter2D(Collider2D other)
-       {
-           if (other.gameObject.TryGetComponent<DestroybleObject>(out var destroybleObject))
-           {
-               other.gameObject.GetComponent<ITakeDamage>().TakeDamage(_damage);
-               ReturnToPool();
-           }
-           ReturnToPool();
-       }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.TryGetComponent<DestroybleObject>(out var destroybleObject))
+            {
+                other.gameObject.GetComponent<ITakeDamage>().TakeDamage(_damage);
+                ReturnToPool();
+            }
+            ReturnToPool();
+        }
+
         protected void ReturnToPool()
         {
-            transform.localPosition = Vector3.zero;
+            transform.localPosition = Vector2.zero;
             transform.localRotation = Quaternion.identity;
             gameObject.SetActive(false);
             transform.SetParent(BulletPool);
@@ -54,6 +58,12 @@ namespace Code.Bullet
             {
                 Destroy(gameObject);
             }
+        }
+
+        IEnumerator DestroyCorutine(float time)
+        {
+            yield return new WaitForSeconds(time);
+            ReturnToPool();
         }
     }
 }

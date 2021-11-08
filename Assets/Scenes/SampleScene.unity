@@ -367,10 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46aec3720438bf541bee4f60bf4a23d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 15
-  _acceleration: 2
-  _hp: 1
-  _maxAsteroidCount: 5
 --- !u!1 &1271859999
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +489,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

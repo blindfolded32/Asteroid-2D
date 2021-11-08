@@ -20,7 +20,6 @@ namespace Code.Player.PlayerCode
 
         public void TakeDamage(float damage)
         {
-            
             Debug.Log($"Hurts ");
         }
     }

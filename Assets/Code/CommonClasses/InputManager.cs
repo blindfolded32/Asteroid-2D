@@ -41,7 +41,7 @@ namespace Code.CommonClasses
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                Debug.Log(firePoint.position);
+              //  Debug.Log(firePoint.position);
                 _playerController.PlayerShoot.Shoot(firePoint);
             }
         }
