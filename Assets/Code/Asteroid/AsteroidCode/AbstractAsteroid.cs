@@ -46,10 +46,10 @@ namespace Code.Asteroid
             }
         }
 
-        public AbstractAsteroid(Health health)
+      /*  public AbstractAsteroid(Health health)
         {
             _health = health;
-        }
+        }*/
         private void Start()
         {
             Rigidbody2D = GetComponent<Rigidbody2D>();

@@ -22,7 +22,6 @@ namespace Code.Player.PlayerCode
            _bullet.Transform.rotation = spawnPosition.rotation;
            _bullet.gameObject.SetActive(true);           
            _bullet.Rigidbody2D.AddForce(_bullet.Transform.position * 10 ,ForceMode2D.Impulse);
-          
         }
     }
 }

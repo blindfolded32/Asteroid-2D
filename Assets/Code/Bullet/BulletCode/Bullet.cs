@@ -18,13 +18,14 @@ namespace Code.Bullet
         public Rigidbody2D Rigidbody2D;
         private Transform _bulletPool;
         public Transform Transform;
-        private float _lifeTime = 2.0f;
+        private float _lifeTime =0.5f;
+       
         private void Awake()
         {
             Rigidbody2D = GetComponent<Rigidbody2D>();
             Transform = transform;
-            StartCoroutine(DestroyCorutine(_lifeTime));
         }
+
         private Transform BulletPool
         {
             get
@@ -37,10 +38,9 @@ namespace Code.Bullet
                 return _bulletPool;
             }
         }
-
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.TryGetComponent<DestroybleObject>(out var destroybleObject))
+            if (other.gameObject.TryGetComponent<DestroybleObject>(out _))
             {
                 other.gameObject.GetComponent<ITakeDamage>().TakeDamage(_damage);
                 ReturnToPool();
@@ -48,7 +48,7 @@ namespace Code.Bullet
             ReturnToPool();
         }
 
-        protected void ReturnToPool()
+        public void ReturnToPool()
         {
             transform.localPosition = Vector2.zero;
             transform.localRotation = Quaternion.identity;
@@ -58,12 +58,6 @@ namespace Code.Bullet
             {
                 Destroy(gameObject);
             }
-        }
-
-        IEnumerator DestroyCorutine(float time)
-        {
-            yield return new WaitForSeconds(time);
-            ReturnToPool();
         }
     }
 }

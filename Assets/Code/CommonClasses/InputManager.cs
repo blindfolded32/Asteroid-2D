@@ -1,4 +1,5 @@
-﻿using Code.Player.Interfaces;
+﻿using Code.Player;
+using Code.Player.Interfaces;
 using UnityEngine;
 
 
@@ -10,10 +11,10 @@ namespace Code.CommonClasses
         private Transform _transform;
         private Camera _camera;
 
-       public InputManager(IPlayerController player, Camera camera)
+       public InputManager( PlayerClass player, Camera camera)
         {
-            _playerController = player;
-            _transform = player.GetTransform();
+            _playerController = player.GetController();
+            _transform = player.transform;
             _camera = camera;
         }
 

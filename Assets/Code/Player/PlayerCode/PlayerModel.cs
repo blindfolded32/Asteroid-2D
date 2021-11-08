@@ -7,13 +7,11 @@ namespace Code.Player.PlayerCode
     {
        public float Speed { get; set; }
         public float Acceleration { get; set; }
-        public float Hp { get; set; }
 
-        public PlayerModel(float speed, float acceleration, float hp)
+        public PlayerModel(float speed, float acceleration)
         {
             Speed = speed;
             Acceleration = acceleration;
-            Hp = hp;
         }
     }
 }
