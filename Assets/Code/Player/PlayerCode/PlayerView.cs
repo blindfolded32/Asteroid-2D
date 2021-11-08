@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Code.CommonInterfaces;
 using Code.Player.Interfaces;
 using UnityEngine;
 
 namespace Code.Player.PlayerCode
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class PlayerView : MonoBehaviour,IPlayerView
+    [RequireComponent(typeof(Collider))]
+    public class PlayerView : PlayerClass,IPlayerView
     {
         public Transform Transform { get; set; }
         public Rigidbody2D Rigidbody2D { get => _rigidbody2D ; set => _rigidbody2D = value; }
@@ -14,7 +15,7 @@ namespace Code.Player.PlayerCode
         private void Awake()
         {
             Transform = transform;
-            TryGetComponent(out _rigidbody2D);
+            _rigidbody2D = GetComponent<Rigidbody2D>();
         }
     }
 }

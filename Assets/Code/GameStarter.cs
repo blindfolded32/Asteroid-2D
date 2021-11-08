@@ -1,35 +1,55 @@
-using System;
 using Code.CommonClasses;
 using Code.Player.Interfaces;
 using Code.Player.PlayerCode;
 using UnityEngine;
-using System.Collections;
+using Code.Asteroid;
+using Code.EnemyShip.Code;
+using Code.EnemyShip.Interfaces;
+using Code.Markers;
+using Code.Player;
+using static Code.ConfigVars;
 
 namespace Code
 {
     public class GameStarter : MonoBehaviour
     {
-        private Camera _camera;
-        private IPlayerController _playerController;
-        [SerializeField] private float _speed;
-        [SerializeField] private float _acceleration;
-        [SerializeField] private float _hp;
-        
+       // private IPlayerController _playerController;
+        private IEnemyShipFabric _enemyShipFabric;
+        private AsteroidSpawner _asteroidPool;
+        private InputManager _inputManager;
+        private PlayerClass _playerClass;
+        void Start()
+      {
+        //  _playerController = new PlayerController(new PlayerModel(ConfigVars._speed,ConfigVars._acceleration,ConfigVars._hp), FindObjectOfType<PlayerView>());
+       _playerClass = PlayerClass.CreatePlayer(ConfigVars._speed, ConfigVars._acceleration, ConfigVars._hp,
+            FindObjectOfType<PlayerSpawn>().transform);
+           AbstractAsteroid.CreateAsteroidEnemy(new Health(3.0f, 3.0f));
+            
+           /* IAsteroidFactory factory = new AsteroidFactory();
+            factory.Create(new Health(100.0f, 100.0f));
 
-      //  private InputManager _inputManager;
-      void Start()
+            AbstractAsteroid.Factory = factory;
+            AbstractAsteroid.Factory.Create(new Health(100.0f, 100.0f));*/
+           _inputManager =new InputManager(_playerClass,Camera.main);
+           _asteroidPool = new AsteroidSpawner(ConfigVars._maxAsteroidCount,ConfigVars._asteroidHealth);
+           _enemyShipFabric = new EnemyShipFabric();
+           _enemyShipFabric.Create(new Health(10.0f,10.0f), _speed);
+      }
+      private void Update()
         {
-            _camera = Camera.main;
-            _playerController = new PlayerController(new PlayerModel(_speed,_acceleration,_hp), FindObjectOfType<PlayerView>());
+            _inputManager.Fire(FindObjectOfType<PlayerView>().GetComponentInChildren<FirePoint>().transform);
         }
-
-        private void Update()
+        private void FixedUpdate()
         {
-            var direction = Input.mousePosition - _camera.WorldToScreenPoint(_playerController.GetTransform().position);
-            _playerController.RotateShip(direction);
-            _playerController.Ship.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Time.fixedDeltaTime);
-            if (Input.GetKeyDown(KeyCode.LeftShift)) _playerController.Ship.AddAcceleration();
-            if (Input.GetKeyUp(KeyCode.LeftShift)) _playerController.Ship.RemoveAcceleration();
+            _inputManager.GetMovement();
+           
+        }
+        private void LateUpdate()
+        {
+            if (!FindObjectOfType<AbstractAsteroid>())
+            {
+                _asteroidPool.SpawnAsteroid(_maxAsteroidCount);
+            }
         }
     }
 }
