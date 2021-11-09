@@ -2,7 +2,7 @@
 using Code.CommonClasses;
 using UnityEngine;
 
-namespace Code.Asteroid
+namespace Code.Asteroid.AsteroidCode
 {
     public sealed class AsteroidFactory : IAsteroidFactory
     {

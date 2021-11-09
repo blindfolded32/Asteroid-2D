@@ -1,39 +1,42 @@
-﻿using System;
-using System.Collections;
-using Code.Bullet.Interfaces;
-using Code.CommonClasses;
+﻿using Code.CommonClasses;
 using Code.CommonInterfaces;
 using Code.Markers;
 using UnityEngine;
 
-namespace Code.Bullet
+namespace Code.Bullet.BulletCode
 {
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Collider2D))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class Bullet : MonoBehaviour
     {
         [SerializeField]private float _damage;
-        private IBulletFactory _factory;
-        [SerializeField]private float _speed;
-        public Sprite sprite;
-        public Rigidbody2D Rigidbody2D;
+       [SerializeField]private float _speed;
+    public Rigidbody2D Rigidbody2D;
         private Transform _bulletPool;
         public Transform Transform;
+        [SerializeField] private float _ttl = 0.8f;
+        public float _timeToDie;
       
         private void Awake()
         {
             Rigidbody2D = GetComponent<Rigidbody2D>();
             Transform = transform;
+            _timeToDie = Time.time + _ttl;
         }
-
+        private void Update()
+        {
+            if (Time.time > _ttl + _timeToDie && isActiveAndEnabled)
+            {
+                ReturnToPool();
+            }
+        }
         private Transform BulletPool
         {
             get
             {
-                if (_bulletPool == null)
-                {
-                    var find = GameObject.Find(NameManager.BULLET_POOL);
-                    _bulletPool = find == null ? null : find.transform;
-                }
+                if (_bulletPool != null) return _bulletPool;
+                var find = GameObject.Find(NameManager.BULLET_POOL);
+                _bulletPool = find == null ? null : find.transform;
                 return _bulletPool;
             }
         }

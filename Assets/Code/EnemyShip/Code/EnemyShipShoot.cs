@@ -23,12 +23,12 @@ namespace Code.EnemyShip.Code
             if (Time.time > _fireRate + _nextShot)
             {
                 _nextShot = Time.time + _fireRate;
-                
                 var bullet = _bulletPool.GetItem("Bullet");
                 Physics2D.IgnoreCollision(spawnPosition.parent.GetComponent<Collider2D>(), bullet.GetComponent<Collider2D>());
                 bullet.Transform.position = spawnPosition.position;
                 bullet.Transform.rotation = spawnPosition.rotation;
                 bullet.gameObject.SetActive(true);
+                bullet._timeToDie = Time.time;
                 bullet.Rigidbody2D.AddForce(bullet.Transform.position.normalized * 10, ForceMode2D.Impulse);
             }
         }

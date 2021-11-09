@@ -4,6 +4,6 @@ namespace Code.Bullet.Interfaces
 {
     public interface IBulletFactory
     {
-        Bullet Create(Vector3 spawnPosition);
+        BulletCode.Bullet Create(Vector3 spawnPosition);
     }
 }

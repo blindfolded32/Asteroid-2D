@@ -1,4 +1,5 @@
-﻿using Code.CommonClasses;
+﻿using Code.Asteroid.AsteroidCode;
+using Code.CommonClasses;
 
 namespace Code.Asteroid.Interfaces
 {

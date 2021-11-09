@@ -6,17 +6,14 @@ namespace Code.Asteroid
     public class AsteroidSpawner
     {
         private AsteroidPool asteroidPool;
-        private Health _hp;
+       // private Health _hp;
 
         public AsteroidSpawner(int maxAsteroidCount, Health hp)
         {
             asteroidPool = new AsteroidPool(maxAsteroidCount, hp);
-
         }
-
-       public void SpawnAsteroid(int maxAsteroidCount)
+        public void SpawnAsteroid(int maxAsteroidCount)
         {
-            
             for (int i = 0; i < maxAsteroidCount; i++)
             {
                 var asteroid = asteroidPool.GetEnemy("Asteroid");

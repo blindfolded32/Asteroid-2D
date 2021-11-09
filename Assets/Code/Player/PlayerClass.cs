@@ -11,29 +11,26 @@ namespace Code.Player
     public class PlayerClass : MonoBehaviour,ITakeDamage
     {
         private Health _health;
-        public static IPlayerController PlayerController;
-        public Health Health{
+        private static IPlayerController _playerController;
+        private Health Health{
             get
             {
                 if (_health.Current <= 0) Destroy(gameObject);
                 return _health;
             }
-        protected set
+            set
         {
             _health = value;
         }
         }
-        
         public static PlayerView CreatePlayer(float speed, float acceleration,Health health, Transform spawnPosition)
         {
             var player = Instantiate( Resources.Load<PlayerView>("Prefabs/Player"), spawnPosition);
             player.Health = health;
-            PlayerController = new PlayerController(new PlayerModel(speed, acceleration), player);
+            _playerController = new PlayerController(new PlayerModel(speed, acceleration), player);
             return player;
         }
-
-        public PlayerController GetController() => PlayerController as PlayerController;
-
+        public PlayerController GetController() => _playerController as PlayerController;
         public void TakeDamage(float damage)
         {
             Health.ChangeCurrentHealth(Health.Current - damage);
