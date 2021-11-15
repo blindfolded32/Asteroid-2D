@@ -1,9 +1,12 @@
+using System;
 using Code.CommonClasses;
 using Code.Player.Interfaces;
 using Code.Player.PlayerCode;
 using UnityEngine;
 using Code.Asteroid;
 using Code.Asteroid.AsteroidCode;
+using Code.Bullet;
+using Code.EnemyShip;
 using Code.EnemyShip.Code;
 using Code.EnemyShip.Interfaces;
 using Code.Markers;
@@ -18,15 +21,24 @@ namespace Code
         private AsteroidSpawner _asteroidPool;
         private InputManager _inputManager;
         private PlayerClass _playerClass;
+        private EnemyShipData _enemyShipData;
+
+        private void Awake()
+        {
+            ServiceLocator.ServiceLocator.SetService<BulletPool>(new BulletPool(5));
+        }
 
         private void Start()
       {       
-       _playerClass = PlayerClass.CreatePlayer(ConfigVars._speed, ConfigVars._acceleration, ConfigVars._hp,
+          _enemyShipData = new EnemyShipData(_hp,_speed);
+          _enemyShipData.DeepCopy();
+       _playerClass = PlayerClass.CreatePlayer(_speed, _acceleration, _hp,
             FindObjectOfType<PlayerSpawn>().transform);
          _inputManager =new InputManager(_playerClass,Camera.main);
-           _asteroidPool = new AsteroidSpawner(ConfigVars._maxAsteroidCount,ConfigVars._asteroidHealth);
+           _asteroidPool = new AsteroidSpawner(_maxAsteroidCount,_asteroidHealth);
            _enemyShipFabric = new EnemyShipFabric();
-           _enemyShipFabric.Create(new Health(10.0f,10.0f), _speed);
+           _enemyShipFabric.Create(_enemyShipData.Health,_enemyShipData.Speed);
+           
       }
       private void Update()
         {
@@ -42,6 +54,11 @@ namespace Code
             if (!FindObjectOfType<AbstractAsteroid>())
             {
                 _asteroidPool.SpawnAsteroid(_maxAsteroidCount);
+            }
+
+            if (!FindObjectOfType<EnemyShip.Code.EnemyShip>())
+            {
+                _enemyShipFabric.Create(_enemyShipData.Health, _enemyShipData.Speed);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Code.EnemyShip.Interfaces;
 using Code.Markers;
 using Code.Player.PlayerCode;
@@ -7,6 +8,7 @@ using UnityEngine.AI;
 
 namespace Code.EnemyShip.Code
 {
+    [Serializable]
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Collider2D))]
     public class EnemyShipView : EnemyShip, IEnemyShipView
@@ -24,7 +26,7 @@ namespace Code.EnemyShip.Code
      {
         // _navMeshAgent = GetComponent<NavMeshAgent>();
          _transform = transform;
-         _shipShoot = new EnemyShipShoot(10);
+         _shipShoot = new EnemyShipShoot();
      }
 
      private void FixedUpdate()

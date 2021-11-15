@@ -5,21 +5,16 @@ using UnityEngine;
 
 namespace Code.Bullet.BulletCode
 {
-    [RequireComponent(typeof(Collider2D))]
-    [RequireComponent(typeof(Rigidbody2D))]
     public class Bullet : MonoBehaviour
     {
         [SerializeField]private float _damage;
-       [SerializeField]private float _speed;
-    public Rigidbody2D Rigidbody2D;
+        [SerializeField]private float _speed;
         private Transform _bulletPool;
         public Transform Transform;
         [SerializeField] private float _ttl = 0.8f;
         public float _timeToDie;
-      
         private void Awake()
         {
-            Rigidbody2D = GetComponent<Rigidbody2D>();
             Transform = transform;
             _timeToDie = Time.time + _ttl;
         }
@@ -49,8 +44,16 @@ namespace Code.Bullet.BulletCode
             }
             ReturnToPool();
         }
-
-        public void ReturnToPool()
+        public static T GetOrAddComponent<T>(GameObject gameObject) where T : Component
+        {
+            var result = gameObject.GetComponent<T>();
+            if (!result)
+            {
+                result = gameObject.AddComponent<T>();
+            }
+            return result;
+        }
+        private void ReturnToPool()
         {
             transform.localPosition = Vector2.zero;
             transform.localRotation = Quaternion.identity;

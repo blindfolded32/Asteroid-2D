@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Timers;
 using Code.CommonClasses;
+using Code.Markers;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace Code.Bullet
 {
-    internal sealed class BulletPool
+    internal sealed class BulletPool 
     {
         private readonly Dictionary<string, HashSet<BulletCode.Bullet>> _bulletPool;
         private readonly int _capacity;
@@ -50,6 +52,7 @@ namespace Code.Bullet
                     var instantiate = Object.Instantiate(laser);
                     ReturnToPool(instantiate.transform);
                     bullets.Add(instantiate);
+                    
                 }
                 GetBullet(bullets);
             }

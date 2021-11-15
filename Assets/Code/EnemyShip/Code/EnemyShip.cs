@@ -1,12 +1,16 @@
-﻿using Code.CommonClasses;
+﻿using System;
+using Code.CommonClasses;
 using Code.CommonInterfaces;
 using UnityEngine;
 
 namespace Code.EnemyShip.Code
 {
+    [Serializable]
     public abstract class EnemyShip : MonoBehaviour, ITakeDamage
     {
         private Health _health;
+        public EnemyShipShoot EnemyShipShoot;
+        public EnemyShipController EnemyShipController;
         public Health Health
         {
             get
@@ -16,13 +20,10 @@ namespace Code.EnemyShip.Code
             }
             set=> _health = value;
         }
-
-        public EnemyShipShoot EnemyShipShoot;
-        public EnemyShipController EnemyShipController;
         public void TakeDamage(float damage)
         {
             Debug.Log($"Don't hurt me{Health.Current}");
-            _health.ChangeCurrentHealth(Health.Current - damage);
+            _health.ChangeCurrentHealth(damage);
         }
     }
 }

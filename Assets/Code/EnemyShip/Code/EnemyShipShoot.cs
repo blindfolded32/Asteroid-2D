@@ -1,4 +1,5 @@
-﻿using Code.Bullet;
+﻿using System;
+using Code.Bullet;
 using Code.CommonClasses;
 using Code.CommonInterfaces;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine;
 
 namespace Code.EnemyShip.Code
 {
+    [Serializable]
     public class EnemyShipShoot : IFire
     {
 
@@ -13,9 +15,9 @@ namespace Code.EnemyShip.Code
         private readonly float _fireRate = 0.5f;
         private float _nextShot;
 
-        public EnemyShipShoot(int capacity)
+        public EnemyShipShoot()
         {
-            _bulletPool = new BulletPool(capacity);
+            _bulletPool = ServiceLocator.ServiceLocator.Resolve<BulletPool>();
         }
             
         public void Shoot(Transform spawnPosition)
@@ -29,7 +31,8 @@ namespace Code.EnemyShip.Code
                 bullet.Transform.rotation = spawnPosition.rotation;
                 bullet.gameObject.SetActive(true);
                 bullet._timeToDie = Time.time;
-                bullet.Rigidbody2D.AddForce(bullet.Transform.position.normalized * 10, ForceMode2D.Impulse);
+                Bullet.BulletCode.Bullet.GetOrAddComponent<Collider2D>(bullet.gameObject);
+                Bullet.BulletCode.Bullet.GetOrAddComponent<Rigidbody2D>(bullet.gameObject).AddForce(bullet.Transform.position.normalized * 10, ForceMode2D.Impulse);
             }
         }
     }

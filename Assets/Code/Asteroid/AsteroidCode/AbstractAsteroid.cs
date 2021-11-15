@@ -1,5 +1,4 @@
-﻿using Code.Asteroid.Interfaces;
-using Code.CommonClasses;
+﻿using Code.CommonClasses;
 using Code.CommonInterfaces;
 using Code.Markers;
 using UnityEngine;
@@ -11,10 +10,8 @@ namespace Code.Asteroid.AsteroidCode
     public class AbstractAsteroid : MonoBehaviour, ITakeDamage
     {
         [SerializeField] private float _damage = 1.0f;
-        public static IAsteroidFactory Factory;
         private Transform _rotPool;
         private Health _health;
-        public Rigidbody2D Rigidbody2D;
         private Health Health
         {
             get
@@ -58,19 +55,6 @@ namespace Code.Asteroid.AsteroidCode
                                                                             .GetComponent<ITakeDamage>().TakeDamage(_damage);
             ReturnToPool();
         }
-        public static AbstractAsteroid CreateAsteroidEnemy(Health hp)
-        {
-            var enemy = Instantiate(Resources.Load<AbstractAsteroid>("Prefabs/Asteroid"));
-            enemy.Health = hp;
-            return enemy;
-        }
-      /*  public void ActiveEnemy(Vector3 position, Quaternion rotation)
-        {
-            transform.localPosition = position;
-            transform.localRotation = rotation;
-            gameObject.SetActive(true);
-            transform.SetParent(null);
-        }*/
         public void DependencyInjectHealth(Health hp) => Health = hp;
         private void ReturnToPool()
         {
@@ -81,6 +65,7 @@ namespace Code.Asteroid.AsteroidCode
                 Destroy(gameObject);
             }
         }
-        public void TakeDamage(float damage) => DependencyInjectHealth(new Health(_health.Max,_health.Current - damage));
+
+        public void TakeDamage(float damage) => _health.ChangeCurrentHealth(damage);
     }
 }

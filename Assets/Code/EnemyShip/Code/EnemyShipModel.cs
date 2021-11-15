@@ -1,7 +1,9 @@
-﻿using Code.EnemyShip.Interfaces;
+﻿using System;
+using Code.EnemyShip.Interfaces;
 
 namespace Code.EnemyShip.Code
 {
+    [Serializable]
     public struct EnemyShipModel : IEnemyShipModel
     {
         public float Speed { get; }
