@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/EnemyShip/UnitShipData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -31,22 +32,23 @@
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/EnemyShipData.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShip.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerClass.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidCode/AbstractAsteroid.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/ConfigVars.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletCode/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/EnemyShipDeepCopy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerClass.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/EnemyShipData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/ConfigVars.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyShipFabric.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/GameStarter.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipFabric.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/UnitShipData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameStarter.cs" />
       </list>
     </option>
   </component>
@@ -98,7 +100,8 @@
       <workItem from="1636958586146" duration="5212000" />
       <workItem from="1636963865913" duration="1025000" />
       <workItem from="1637045728465" duration="5205000" />
-      <workItem from="1637060723810" duration="3520000" />
+      <workItem from="1637060723810" duration="5750000" />
+      <workItem from="1637066667456" duration="3306000" />
     </task>
     <servers />
   </component>

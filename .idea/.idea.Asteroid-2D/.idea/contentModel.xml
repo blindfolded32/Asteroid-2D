@@ -39,7 +39,6 @@
               <e p="EnemyShipShoot.cs" t="Include" />
               <e p="EnemyShipView.cs" t="Include" />
             </e>
-            <e p="EnemyShipData.cs" t="Include" />
             <e p="EnemyShipDeepCopy.cs" t="Include" />
             <e p="Interfaces" t="Include">
               <e p="IEnemyController.cs" t="Include" />
@@ -47,6 +46,7 @@
               <e p="IEnemyShipModel.cs" t="Include" />
               <e p="IEnemyShipView.cs" t="Include" />
             </e>
+            <e p="UnitShipData.cs" t="Include" />
           </e>
           <e p="GameStarter.cs" t="Include" />
           <e p="Markers" t="Include">

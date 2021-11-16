@@ -11,7 +11,7 @@ namespace Code
     {
         public const float _speed = 10.0f;
         public const float _acceleration = 20.0f;
-        public static Health _hp = new Health(10.0f,10.0f);
+        public const float unitMaxHealth = 10.0f;
         public const int _maxAsteroidCount  = 10;
         public static Health _asteroidHealth = new Health(1.0f,1.0f);
     }
