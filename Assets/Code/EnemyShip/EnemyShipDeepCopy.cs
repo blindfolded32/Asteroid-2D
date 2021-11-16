@@ -1,12 +1,22 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 
 namespace Code.EnemyShip
 {
     public static partial class ObjectExtensions
 
     {
+        public static T GetOrAddComponent<T>(GameObject gameObject) where T : Component
+        {
+            var result = gameObject.GetComponent<T>();
+            if (!result)
+            {
+                result = gameObject.AddComponent<T>();
+            }
+            return result;
+        }
         public static T DeepCopy<T>(this T self)
         {
             if (!typeof(T).IsSerializable)

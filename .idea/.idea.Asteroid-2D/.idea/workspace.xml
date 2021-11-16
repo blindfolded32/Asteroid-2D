@@ -10,6 +10,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -26,7 +29,6 @@
         <option value="$PROJECT_DIR$/Assets/Code/Markers/MonoBehServiceMarker.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/ServiceLocator/ServiceLocatorMonoBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/EnemyShipDeepCopy.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipShoot.cs" />
@@ -39,11 +41,12 @@
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletCode/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/ConfigVars.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletCode/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/EnemyShipDeepCopy.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyShipFabric.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipFabric.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameStarter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipFabric.cs" />
       </list>
     </option>
   </component>
@@ -94,7 +97,8 @@
       <workItem from="1636440661451" duration="2792000" />
       <workItem from="1636958586146" duration="5212000" />
       <workItem from="1636963865913" duration="1025000" />
-      <workItem from="1637045728465" duration="5154000" />
+      <workItem from="1637045728465" duration="5205000" />
+      <workItem from="1637060723810" duration="2797000" />
     </task>
     <servers />
   </component>

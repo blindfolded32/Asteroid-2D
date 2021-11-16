@@ -14,7 +14,5 @@ namespace Code
         public static Health _hp = new Health(10.0f,10.0f);
         public const int _maxAsteroidCount  = 10;
         public static Health _asteroidHealth = new Health(1.0f,1.0f);
-      //  public  static AssetReference enemyshipref = Addressables.//new AssetReference(default);
-      //  public AsyncOperationHandle<EnemyShip.Code.EnemyShip> Shipref => shipref.LoadAssetAsync<EnemyShip.Code.EnemyShip>();
     }
 }

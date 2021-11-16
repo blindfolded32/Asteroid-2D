@@ -18,11 +18,11 @@ MonoBehaviour:
   m_GUID: 9991e631d2c5b6841950d40736cdd534
   m_SerializeEntries:
   - m_GUID: 95ad273960c71494cbf574fea37855cb
-    m_Address: Assets/Resources_moved/Prefabs/EnemyShip.prefab
+    m_Address: Prefabs/EnemyShip
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 4776803075548898086, guid: 95ad273960c71494cbf574fea37855cb, type: 3}
-    m_TargetAsset: {fileID: 4776803075548898086, guid: 95ad273960c71494cbf574fea37855cb, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9d8f838f8d765b5498bc6678bcce6a8c, type: 2}
   m_SchemaSet:

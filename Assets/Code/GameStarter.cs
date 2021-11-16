@@ -24,7 +24,7 @@ namespace Code
         private PlayerClass _playerClass;
         private EnemyShipData _enemyShipData;
         private EnemyShipData _deepCopyData;
-        AssetReference EnemyShip;
+        public AssetReference EnemyShip;
 
         private void Awake()
         {
@@ -33,11 +33,9 @@ namespace Code
 
         private void Start()
         {
-           EnemyShip.LoadAssetAsync<EnemyShipView>();
             _enemyShipData = new EnemyShipData(_hp,_speed);
           _deepCopyData = _enemyShipData.DeepCopy();
-       _playerClass = PlayerClass.CreatePlayer(_speed, _acceleration, _hp,
-            FindObjectOfType<PlayerSpawn>().transform);
+       _playerClass = PlayerClass.CreatePlayer(_speed, _acceleration, _hp, FindObjectOfType<PlayerSpawn>().transform);
          _inputManager =new InputManager(_playerClass,Camera.main);
            _asteroidPool = new AsteroidSpawner(_maxAsteroidCount,_asteroidHealth);
            _enemyShipFabric = new EnemyShipFabric();
@@ -47,6 +45,7 @@ namespace Code
       private void Update()
         {
             _inputManager.Fire(FindObjectOfType<PlayerView>().GetComponentInChildren<FirePoint>().transform);
+           
         }
         private void FixedUpdate()
         {
