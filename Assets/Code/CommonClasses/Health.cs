@@ -1,5 +1,8 @@
-﻿namespace Code.CommonClasses
+﻿using System;
+
+namespace Code.CommonClasses
 {
+    [Serializable]
     public sealed class Health
     {
         public float Max { get; }
@@ -11,9 +14,9 @@
             Current = current;
         }
 
-        public void ChangeCurrentHealth(float hp)
+        public void ChangeCurrentHealth(float val)
         {
-            Current = hp;
+            Current -= val;
         }
 
     }

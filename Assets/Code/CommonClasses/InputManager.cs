@@ -8,8 +8,8 @@ namespace Code.CommonClasses
     public class InputManager
     {
        private readonly IPlayerController _playerController;
-        private Transform _transform;
-        private Camera _camera;
+        private readonly Transform _transform;
+        private readonly Camera _camera;
 
        public InputManager( PlayerClass player, Camera camera)
         {
@@ -17,7 +17,6 @@ namespace Code.CommonClasses
             _transform = player.transform;
             _camera = camera;
         }
-
        public void GetMovement()
        {
            Move();
@@ -37,12 +36,10 @@ namespace Code.CommonClasses
         }
         private void Acceleration()=>_playerController.Ship.AddAcceleration();
         private void RemoveAcceleration() =>  _playerController.Ship.RemoveAcceleration();
-
         public void Fire(Transform firePoint)
         {
             if (Input.GetButtonDown("Fire1"))
             {
-              //  Debug.Log(firePoint.position);
                 _playerController.PlayerShoot.Shoot(firePoint);
             }
         }

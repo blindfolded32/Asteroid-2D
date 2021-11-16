@@ -1,22 +1,18 @@
-﻿using System;
-using Code.Asteroid.Interfaces;
-using Code.CommonClasses;
+﻿using Code.CommonClasses;
 using Code.CommonInterfaces;
 using Code.Markers;
 using UnityEngine;
 
-namespace Code.Asteroid
+namespace Code.Asteroid.AsteroidCode
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(DestroybleObject))]
     public class AbstractAsteroid : MonoBehaviour, ITakeDamage
     {
         [SerializeField] private float _damage = 1.0f;
-        public static IAsteroidFactory Factory;
         private Transform _rotPool;
         private Health _health;
-        public Rigidbody2D Rigidbody2D;
-        public Health Health
+        private Health Health
         {
             get
             {
@@ -26,13 +22,12 @@ namespace Code.Asteroid
                 }
                 return _health;
             }
-            protected set
+            set
             {
                 _health = value;
             }
         }
-
-        public Transform RotPool
+        private Transform RotPool
         {
             get
             {
@@ -45,55 +40,24 @@ namespace Code.Asteroid
                 return _rotPool;
             }
         }
-
-      /*  public AbstractAsteroid(Health health)
+        public AbstractAsteroid(Health health)
         {
             _health = health;
-        }*/
-        private void Start()
-        {
-            Rigidbody2D = GetComponent<Rigidbody2D>();
         }
-
         private void Update()
         {
-            if (transform.position.y < -10.0f)
-            {
-                Debug.Log("Back to pool");
-                ReturnToPool();
-            }
-        }
-
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.gameObject.TryGetComponent<DestroybleObject>(out var destroybleObject))
-            {
-                other.gameObject.GetComponent<ITakeDamage>().TakeDamage(_damage);
-                ReturnToPool();
-            }
+            if (!(transform.position.y < -10.0f)) return;
             ReturnToPool();
         }
-        public static AbstractAsteroid CreateAsteroidEnemy(Health hp)
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            var enemy = Instantiate(Resources.Load<AbstractAsteroid>("Prefabs/Asteroid"));
-            enemy.Health = hp;
-            return enemy;
+            if (other.gameObject.TryGetComponent<DestroybleObject>(out _)) other.gameObject
+                                                                            .GetComponent<ITakeDamage>().TakeDamage(_damage);
+            ReturnToPool();
         }
-        public void ActiveEnemy(Vector3 position, Quaternion rotation)
+        public void DependencyInjectHealth(Health hp) => Health = hp;
+        private void ReturnToPool()
         {
-            transform.localPosition = position;
-            transform.localRotation = rotation;
-            gameObject.SetActive(true);
-            transform.SetParent(null);
-        }
-        public void DependencyInjectHealth(Health hp)
-        {
-            Health = hp;
-        }
-        protected void ReturnToPool()
-        {
-            transform.localPosition = Vector3.zero;
-            transform.localRotation = Quaternion.identity;
             gameObject.SetActive(false);
             transform.SetParent(RotPool);
             if (!RotPool)
@@ -102,11 +66,6 @@ namespace Code.Asteroid
             }
         }
 
-        public void TakeDamage(float damage)
-        {
-            Debug.Log($"My HP is {_health.Current}");
-            this.DependencyInjectHealth(new Health(_health.Max,_health.Current - damage));
-            if (Health.Current > 0.0f) ReturnToPool();
-        }
+        public void TakeDamage(float damage) => _health.ChangeCurrentHealth(damage);
     }
 }

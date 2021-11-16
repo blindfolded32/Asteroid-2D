@@ -367,6 +367,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46aec3720438bf541bee4f60bf4a23d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyShip:
+    m_AssetGUID: 95ad273960c71494cbf574fea37855cb
+    m_SubObjectName: 
+    m_SubObjectType: 
 --- !u!1 &1483847770
 GameObject:
   m_ObjectHideFlags: 0

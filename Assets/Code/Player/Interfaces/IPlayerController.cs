@@ -6,10 +6,10 @@ namespace Code.Player.Interfaces
 {
     public interface IPlayerController
     {
-        public ShipController Ship { get; set; }
-        public PlayerShoot PlayerShoot { get; set; }
+        ShipController Ship { get;}
+        PlayerShoot PlayerShoot { get;}
         Transform GetTransform();
-        void RotateShip(Vector3 direction);
+        void RotateShip(Vector2 direction);
         
     }
 }

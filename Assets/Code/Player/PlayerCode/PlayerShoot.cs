@@ -7,21 +7,20 @@ namespace Code.Player.PlayerCode
     public class PlayerShoot: IFire
 
     {
-       // private Bullet.Bullet _bullet;
-        private BulletPool _bulletPool;
-
-        public PlayerShoot(int capacity)
+        private readonly BulletPool _bulletPool;
+        public PlayerShoot()
         {
-           _bulletPool = new BulletPool(capacity);
+           _bulletPool = ServiceLocator.ServiceLocator.Resolve<BulletPool>(); //_bulletPool = new BulletPool(capacity);
         }
         public void Shoot(Transform spawnPosition)
         {
-          var _bullet = _bulletPool.GetItem("Bullet");
-          Physics2D.IgnoreCollision(spawnPosition.parent.GetComponent<Collider2D>(),_bullet.GetComponent<Collider2D>());
-           _bullet.Transform.position = spawnPosition.position;
-           _bullet.Transform.rotation = spawnPosition.rotation;
-           _bullet.gameObject.SetActive(true);           
-           _bullet.Rigidbody2D.AddForce(_bullet.Transform.position.normalized * 10 ,ForceMode2D.Impulse);
+          var bullet = _bulletPool.GetItem("Bullet");
+          Physics2D.IgnoreCollision(spawnPosition.parent.GetComponent<Collider2D>(),bullet.GetComponent<Collider2D>());
+          bullet.Transform.position = spawnPosition.position;
+          bullet.Transform.rotation = spawnPosition.rotation;
+           bullet.gameObject.SetActive(true);   
+           bullet._timeToDie = Time.time;
+          Bullet.BulletCode.Bullet.GetOrAddComponent<Rigidbody2D>(bullet.gameObject).AddForce(bullet.Transform.position.normalized * 10 ,ForceMode2D.Impulse);
         }
     }
 }

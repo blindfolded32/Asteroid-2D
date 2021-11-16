@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Code.Asteroid.AsteroidCode;
 using Code.CommonClasses;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -12,7 +13,7 @@ namespace Code.Asteroid
         private readonly Dictionary<string, HashSet<AbstractAsteroid>> _enemyPool;
         private readonly int _capacityPool;
         private readonly Transform _rootPool;
-        private Health _hp;
+        private readonly Health _hp;
 
         public AsteroidPool(int capacityPool, Health health)
         {
@@ -24,7 +25,6 @@ namespace Code.Asteroid
                 _rootPool = new GameObject(NameManager.POOL_AMMUNITION).transform;
             }
         }
-        
         public AbstractAsteroid GetEnemy(string type)
         {
             AbstractAsteroid result;
@@ -38,12 +38,10 @@ namespace Code.Asteroid
             }
             return result;
         }
-
         private HashSet<AbstractAsteroid> GetListEnemies(string type)
         {
             return _enemyPool.ContainsKey(type) ? _enemyPool[type] : _enemyPool[type] = new HashSet<AbstractAsteroid>();
         }
-
         private AbstractAsteroid GetAsteroid(HashSet<AbstractAsteroid> enemies)
         {
             var enemy = enemies.FirstOrDefault(a => !a.gameObject.activeSelf);
@@ -60,13 +58,9 @@ namespace Code.Asteroid
 
                 GetAsteroid(enemies);
             }
-            enemy = enemies.FirstOrDefault(a =>
-            {
-                return !a.gameObject.activeSelf;
-            });
+            enemy = enemies.FirstOrDefault(a => !a.gameObject.activeSelf);
             return enemy;
         }
-
         private void ReturnToPool(Transform transform)
         {
             transform.localPosition = Vector3.zero;
@@ -74,7 +68,6 @@ namespace Code.Asteroid
             transform.gameObject.SetActive(false);
             transform.SetParent(_rootPool);
         }
-
         public void RemovePool()
         {
             Object.Destroy(_rootPool.gameObject);

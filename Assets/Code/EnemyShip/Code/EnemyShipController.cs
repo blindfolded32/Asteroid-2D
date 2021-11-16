@@ -1,4 +1,5 @@
-﻿using Code.CommonInterfaces;
+﻿using System;
+using Code.CommonInterfaces;
 using Code.EnemyShip.Interfaces;
 using Code.Player.PlayerCode;
 using UnityEngine;
@@ -6,6 +7,7 @@ using Object = UnityEngine.Object;
 
 namespace Code.EnemyShip.Code
 {
+    [Serializable]
     public class EnemyShipController : IEnemyController
     {
         private readonly IEnemyShipModel _enemyShipModel;

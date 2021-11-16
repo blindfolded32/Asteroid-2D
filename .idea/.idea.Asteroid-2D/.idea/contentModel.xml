@@ -10,22 +10,15 @@
           <e p="Asteroid" t="Include">
             <e p="AsteroidCode" t="Include">
               <e p="AbstractAsteroid.cs" t="Include" />
-              <e p="AsteroidFactory.cs" t="Include" />
             </e>
             <e p="AsteroidPool.cs" t="Include" />
             <e p="AsteroidSpawner.cs" t="Include" />
-            <e p="Interfaces" t="Include">
-              <e p="IAsteroidFactory.cs" t="Include" />
-            </e>
           </e>
           <e p="Bullet" t="Include">
             <e p="BulletCode" t="Include">
               <e p="Bullet.cs" t="Include" />
             </e>
             <e p="BulletPool.cs" t="Include" />
-            <e p="Interfaces" t="Include">
-              <e p="IBulletFactory.cs" t="Include" />
-            </e>
           </e>
           <e p="CommonClasses" t="Include">
             <e p="Health.cs" t="Include" />
@@ -46,7 +39,8 @@
               <e p="EnemyShipShoot.cs" t="Include" />
               <e p="EnemyShipView.cs" t="Include" />
             </e>
-            <e p="EhemyShipPool.cs" t="Include" />
+            <e p="EnemyShipData.cs" t="Include" />
+            <e p="EnemyShipDeepCopy.cs" t="Include" />
             <e p="Interfaces" t="Include">
               <e p="IEnemyController.cs" t="Include" />
               <e p="IEnemyShipFabric.cs" t="Include" />
@@ -76,6 +70,9 @@
               <e p="PlayerShoot.cs" t="Include" />
               <e p="PlayerView.cs" t="Include" />
             </e>
+          </e>
+          <e p="ServiceLocator" t="Include">
+            <e p="ServiceLocator.cs" t="Include" />
           </e>
           <e p="Ship" t="Include">
             <e p="Interfaces" t="Include">
