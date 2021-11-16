@@ -22,8 +22,8 @@ namespace Code
         private AsteroidSpawner _asteroidPool;
         private InputManager _inputManager;
         private PlayerClass _playerClass;
-        private EnemyShipData _enemyShipData;
-        private EnemyShipData _deepCopyData;
+        private UnitShipData _enemyShipData;
+        private UnitShipData _deepCopyData;
         public AssetReference EnemyShip;
 
         private void Awake()
@@ -33,9 +33,10 @@ namespace Code
 
         private async void Start()
         {
-            _enemyShipData = new EnemyShipData(_hp,_speed);
+            _enemyShipData = new UnitShipData(new Health(unitMaxHealth,unitMaxHealth), _speed);
           _deepCopyData = _enemyShipData.DeepCopy();
-       _playerClass = PlayerClass.CreatePlayer(_speed, _acceleration, _hp, FindObjectOfType<PlayerSpawn>().transform);
+       _playerClass = PlayerClass.CreatePlayer(_speed, _acceleration, new Health(unitMaxHealth,unitMaxHealth), 
+           FindObjectOfType<PlayerSpawn>().transform);
          _inputManager =new InputManager(_playerClass,Camera.main);
            _asteroidPool = new AsteroidSpawner(_maxAsteroidCount,_asteroidHealth);
            _enemyShipFabric = new EnemyShipFabric();

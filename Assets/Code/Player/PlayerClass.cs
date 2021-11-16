@@ -33,6 +33,7 @@ namespace Code.Player
         public PlayerController GetController() => _playerController as PlayerController;
         public void TakeDamage(float damage)
         {
+            Debug.Log($"Palyer {Health.Current}");
             Health.ChangeCurrentHealth(damage);
         }
     }
