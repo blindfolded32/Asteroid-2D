@@ -11,6 +11,7 @@ using Code.EnemyShip.Code;
 using Code.EnemyShip.Interfaces;
 using Code.Markers;
 using Code.Player;
+using UnityEngine.AddressableAssets;
 using static Code.ConfigVars;
 
 namespace Code
@@ -22,6 +23,8 @@ namespace Code
         private InputManager _inputManager;
         private PlayerClass _playerClass;
         private EnemyShipData _enemyShipData;
+        private EnemyShipData _deepCopyData;
+        AssetReference EnemyShip;
 
         private void Awake()
         {
@@ -29,15 +32,16 @@ namespace Code
         }
 
         private void Start()
-      {       
-          _enemyShipData = new EnemyShipData(_hp,_speed);
-          _enemyShipData.DeepCopy();
+        {
+           EnemyShip.LoadAssetAsync<EnemyShipView>();
+            _enemyShipData = new EnemyShipData(_hp,_speed);
+          _deepCopyData = _enemyShipData.DeepCopy();
        _playerClass = PlayerClass.CreatePlayer(_speed, _acceleration, _hp,
             FindObjectOfType<PlayerSpawn>().transform);
          _inputManager =new InputManager(_playerClass,Camera.main);
            _asteroidPool = new AsteroidSpawner(_maxAsteroidCount,_asteroidHealth);
            _enemyShipFabric = new EnemyShipFabric();
-           _enemyShipFabric.Create(_enemyShipData.Health,_enemyShipData.Speed);
+           _enemyShipFabric.Create(EnemyShip,_enemyShipData.Health,_enemyShipData.Speed);
            
       }
       private void Update()
@@ -58,7 +62,8 @@ namespace Code
 
             if (!FindObjectOfType<EnemyShip.Code.EnemyShip>())
             {
-                _enemyShipFabric.Create(_enemyShipData.Health, _enemyShipData.Speed);
+                
+                _enemyShipFabric.Create(EnemyShip,_deepCopyData.Health,_deepCopyData.Speed);
             }
         }
     }

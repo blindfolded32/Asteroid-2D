@@ -21,7 +21,6 @@
         <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Interfaces/IPlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/EhemyShipPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/ConfigVars.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/ServiceLocator/ServiceLocator.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Markers/MonoBehServiceMarker.cs" />
@@ -33,16 +32,18 @@
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/EnemyShipData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipFabric.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/GameStarter.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/CommonClasses/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerClass.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidCode/AbstractAsteroid.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Asteroid/AsteroidSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletCode/Bullet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/PlayerCode/PlayerShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Bullet/BulletCode/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/ConfigVars.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Interfaces/IEnemyShipFabric.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/EnemyShip/Code/EnemyShipFabric.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameStarter.cs" />
       </list>
     </option>
   </component>
@@ -92,7 +93,8 @@
       <workItem from="1636372904004" duration="8854000" />
       <workItem from="1636440661451" duration="2792000" />
       <workItem from="1636958586146" duration="5212000" />
-      <workItem from="1636963865913" duration="646000" />
+      <workItem from="1636963865913" duration="1025000" />
+      <workItem from="1637045728465" duration="5154000" />
     </task>
     <servers />
   </component>

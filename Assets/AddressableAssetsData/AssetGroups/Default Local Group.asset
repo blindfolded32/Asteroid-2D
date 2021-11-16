@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9991e631d2c5b6841950d40736cdd534
+  m_SerializeEntries:
+  - m_GUID: 95ad273960c71494cbf574fea37855cb
+    m_Address: Assets/Resources_moved/Prefabs/EnemyShip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4776803075548898086, guid: 95ad273960c71494cbf574fea37855cb, type: 3}
+    m_TargetAsset: {fileID: 4776803075548898086, guid: 95ad273960c71494cbf574fea37855cb, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9d8f838f8d765b5498bc6678bcce6a8c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a6176bf588af48140b072fa5b86d14de, type: 2}
+    - {fileID: 11400000, guid: 94c46ba36f85f9f4594043e853151207, type: 2}
