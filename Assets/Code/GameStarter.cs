@@ -31,7 +31,7 @@ namespace Code
             ServiceLocator.ServiceLocator.SetService<BulletPool>(new BulletPool(5));
         }
 
-        private void Start()
+        private async void Start()
         {
             _enemyShipData = new EnemyShipData(_hp,_speed);
           _deepCopyData = _enemyShipData.DeepCopy();
@@ -39,7 +39,7 @@ namespace Code
          _inputManager =new InputManager(_playerClass,Camera.main);
            _asteroidPool = new AsteroidSpawner(_maxAsteroidCount,_asteroidHealth);
            _enemyShipFabric = new EnemyShipFabric();
-           _enemyShipFabric.Create(EnemyShip,_enemyShipData.Health,_enemyShipData.Speed);
+           await _enemyShipFabric.Create(EnemyShip,_enemyShipData.Health,_enemyShipData.Speed);
            
       }
       private void Update()
