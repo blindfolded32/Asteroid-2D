@@ -17,7 +17,7 @@ using static Code.ConfigVars;
 namespace Code
 {
     public class GameStarter : MonoBehaviour
-    {       
+    {
         private IEnemyShipFabric _enemyShipFabric;
         private AsteroidSpawner _asteroidPool;
         private InputManager _inputManager;
@@ -25,6 +25,7 @@ namespace Code
         private UnitShipData _enemyShipData;
         private UnitShipData _deepCopyData;
         public AssetReference EnemyShip;
+        private bool isReady;
 
         private void Awake()
         {
@@ -33,28 +34,32 @@ namespace Code
 
         private async void Start()
         {
-            _enemyShipData = new UnitShipData(new Health(unitMaxHealth,unitMaxHealth), _speed);
-          _deepCopyData = _enemyShipData.DeepCopy();
-       _playerClass = PlayerClass.CreatePlayer(_speed, _acceleration, new Health(unitMaxHealth,unitMaxHealth), 
-           FindObjectOfType<PlayerSpawn>().transform);
-         _inputManager =new InputManager(_playerClass,Camera.main);
-           _asteroidPool = new AsteroidSpawner(_maxAsteroidCount,_asteroidHealth);
-           _enemyShipFabric = new EnemyShipFabric();
-           await _enemyShipFabric.Create(EnemyShip,_enemyShipData.Health,_enemyShipData.Speed);
-           
-      }
-      private void Update()
+            //_enemyShipData = new EnemyShipData(_hp, _speed);
+            _deepCopyData = _enemyShipData.DeepCopy();
+            _playerClass = PlayerClass.CreatePlayer(_speed, _acceleration, _hp, FindObjectOfType<PlayerSpawn>().transform);
+            _inputManager = new InputManager(_playerClass, Camera.main);
+            _asteroidPool = new AsteroidSpawner(_maxAsteroidCount, _asteroidHealth);
+            _enemyShipFabric = new EnemyShipFabric();
+            await _enemyShipFabric.Create(EnemyShip, _enemyShipData.Health, _enemyShipData.Speed);
+            isReady = true;
+        }
+
+        private void Update()
+
         {
             _inputManager.Fire(FindObjectOfType<PlayerView>().GetComponentInChildren<FirePoint>().transform);
-           
+
         }
         private void FixedUpdate()
         {
             _inputManager.GetMovement();
-           
+
         }
         private void LateUpdate()
         {
+            if (!isReady)
+                return;
+
             if (!FindObjectOfType<AbstractAsteroid>())
             {
                 _asteroidPool.SpawnAsteroid(_maxAsteroidCount);
@@ -62,8 +67,8 @@ namespace Code
 
             if (!FindObjectOfType<EnemyShip.Code.EnemyShip>())
             {
-                
-                _enemyShipFabric.Create(EnemyShip,_deepCopyData.Health,_deepCopyData.Speed);
+
+                _enemyShipFabric.Create(EnemyShip, _deepCopyData.Health, _deepCopyData.Speed);
             }
         }
     }
