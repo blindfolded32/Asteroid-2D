@@ -9,6 +9,7 @@ namespace Code.EnemyShip.Interfaces
 {
     public interface IEnemyShipFabric
     {
-        Task<Code.EnemyShip> Create(AssetReference assetReference, Health health, float speed);
+      //  Task<Code.EnemyShip> Create(AssetReference assetReference, Health health, float speed);
+      Task<Code.EnemyShip> Create(UnitShipData unitShipData); 
     }
 }
